@@ -6,24 +6,24 @@
     <!-- 中间的路由 router-view 区域 -->
 
     <!-- 底部 Tabbar 区域 -->
-        <mt-tabbar :selected.sync="selected">
-      <mt-tab-item id="首页">
-        <img slot="icon" src="">
-        首页
-      </mt-tab-item>
-      <mt-tab-item id="会员">
-        <img slot="icon" src="">
-        会员
-      </mt-tab-item>
-      <mt-tab-item id="购物车">
-        <img slot="icon" src="">
-        购物车
-      </mt-tab-item>
-      <mt-tab-item id="搜索">
-        <img slot="icon" src="">
-        搜索
-      </mt-tab-item>
-    </mt-tabbar>
+       <nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="#tabbar">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-chat">
+				<span class="mui-icon mui-icon-email"><span class="mui-badge">9</span></span>
+				<span class="mui-tab-label">消息</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-contact">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">通讯录</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-map">
+				<span class="mui-icon mui-icon-gear"></span>
+				<span class="mui-tab-label">设置</span>
+			</a>
+		</nav>
 
 <h1>123</h1>
   </div>
