@@ -16,6 +16,16 @@ Vue.use(VueRouter)
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
+// 导入格式化时间的插件
+ import moment from 'moment'
+
+//  定义全局的过滤器
+Vue.filter('dateFormat',function(dataStr,pattern = "YYYY-MM-DD HH:mm:ss"){
+  return moment(dataStr).format(pattern)
+})
+// 设置请求的根路径
+Vue.http.options.root = 'http://www.lovegf.cn:8899'
+
 // 配置vue-resource的请求根域名
 // Vue.http.options.root = 'http://www.lovegf.cn:8899/'
 // 配置post请求以传统表单形式提交参数 application/x-www-form-urlencoded
