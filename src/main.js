@@ -25,6 +25,8 @@ Vue.filter('dateFormat',function(dataStr,pattern = "YYYY-MM-DD HH:mm:ss"){
 })
 // 设置请求的根路径
 Vue.http.options.root = 'http://www.lovegf.cn:8899'
+// 设置全局post请求表单数据格式组织形式
+Vue.http.options.emulateJSON = true;
 
 // 配置vue-resource的请求根域名
 // Vue.http.options.root = 'http://www.lovegf.cn:8899/'
