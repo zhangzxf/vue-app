@@ -7,20 +7,22 @@ import ShopcarContainer from '../components/tabbar/ShopcarContainer'
 import SearchContainer from '../components/tabbar/SearchContainer'
 import NewsList from '../components/news/NewsList'
 import NewsInfo from '../components/news/NewsInfo'
-import No from "../components/news/No"
+import PhotoList from "../components/photos/PhotoList"
+import PhotoInfo from "../components/photos/PhotoInfo"
 
 
 // 创建路由对象
 var router = new VueRouter({
   routes:[ 
     { path: "/", redirect: "/home" },
-    { path: "/home", component: HomeContainer },
+    { path: "/home", component: HomeContainer  },
     { path: "/member", component: MemberContainer },
     { path: "/shopcar", component: ShopcarContainer },
     { path: "/search", component: SearchContainer },
     { path: "/home/newslist", component: NewsList},
     { path: "/home/newsinfo/:id", component: NewsInfo},
-    { path: "/home/No",component:No}
+    { path: "/home/photolist",component:PhotoList},
+    { path: "/home/photoinfo/:id",component:PhotoInfo}
   ],
   linkActiveClass:'mui-active' //覆盖默认的路由高亮的类，默认的类叫 router-link-active
 })

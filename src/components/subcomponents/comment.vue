@@ -6,10 +6,10 @@
 
     <mt-button type="primary" size="large" class="cmt-info" @click="postComment">发表评论</mt-button>
     <div class="cmt-list">
-      <div class="cmt-item" v-for="(item,i) in comments" :key="item.add_item">
+      <div class="cmt-item" v-for="(item,i) in comments" :key="item.add_time">
         <div
           class="cmt-title"
-        >第{{i+1}}楼&nbsp;&nbsp;用户：{{item.user_name}}&nbsp;&nbsp;发表时间：{{item.add_item | dateFormat}}</div>
+        >第{{i+1}}楼&nbsp;&nbsp;用户：{{item.user_name}}&nbsp;&nbsp;发表时间：{{item.add_time | dateFormat}}</div>
         <div class="cmt-body">{{item.content}}</div>
       </div>
     </div>
@@ -56,22 +56,22 @@ export default {
         return Toast("你提交的内容为空");
       }
       // 参数1：请求的URL地址
-      // 参数2：提交给服务器的数据对象{ cotent:this.msg }
+      // 参数2：提交给服务器的数据对象{ content:this.msg }
       // 参数3：定义提交的时候，表单中的数据格式 options.emulateJSON = true
       this.$http
         .post("api/postcomment/" + this.$route.params.id, {
-          cotent: this.msg.trim()
+          content: this.msg.trim()
         })
-        .then(function(result) {
+        .then(result => {
           if (result.body.status === 0) {
             // 拼接出一个评论对象
-            const cmt = {
+            let cmt = {
               user_name: "匿名用户",
-              add_item: Date.now(),
-              content : this.msg.trim()
+              add_time: Date.now(),
+              content: this.msg.trim()
             };
             this.comments.unshift(cmt);
-            this.msg=""
+             this.msg = "";
           }
         });
     }
