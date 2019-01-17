@@ -38,11 +38,15 @@ Vue.http.options.emulateJSON = true;
 //  导入 MUI  的样式
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
+import './lib/mui/css/golbal.css'
  
 // 全局导入 Mint-UI 中的组件
 import 'mint-ui/lib/style.css'
 import MintUI from 'mint-ui'
 Vue.use(MintUI)
+
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
 
 
 // 按需导入 Mint-UI 中的组件 
